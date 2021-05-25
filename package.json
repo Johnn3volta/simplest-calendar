@@ -1,0 +1,25 @@
+{
+  "name": "simplest-calendar",
+  "version": "1.0.0",
+  "description": "Simple Calendar Pure JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Johnn3volta/simplest-calendar.git"
+  },
+  "keywords": [
+    "simple",
+    "calendar",
+    "pure",
+    "js"
+  ],
+  "author": "Johnn3volta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Johnn3volta/simplest-calendar/issues"
+  },
+  "homepage": "https://github.com/Johnn3volta/simplest-calendar#readme"
+}
