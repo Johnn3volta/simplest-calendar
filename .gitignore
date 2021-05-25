@@ -23,6 +23,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-node_modeules
 .idea
+/node_modules
 
