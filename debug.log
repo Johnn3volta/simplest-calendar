@@ -1,9 +1,0 @@
-
-X:\projects\lerning\simplest-calendar\src\index.ts
-  1:1   warning  Unexpected console statement                 no-console
-  1:21  error    Unexpected string concatenation of literals  no-useless-concat
-  1:26  error    Unexpected string concatenation of literals  no-useless-concat
-  1:31  error    Unexpected string concatenation of literals  no-useless-concat
-
-✖ 4 problems (3 errors, 1 warning)
-
