@@ -4,10 +4,8 @@
   "description": "Simple Calendar Pure JS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint src",
-    "lint:fix": "npm run lint -- --fix",
-    "format": "prettier-eslint --write \"src/**/*.ts\""
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "npm run lint -- --fix"
   },
   "repository": {
     "type": "git",
@@ -36,12 +34,12 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-unused-imports": "^1.1.1",
     "prettier": "^2.3.0",
-    "prettier-eslint-cli": "^5.0.1",
     "typescript": "^4.2.4"
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not op_mini all"
-  ]
+  ],
+  "dependencies": {}
 }
