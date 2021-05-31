@@ -7,11 +7,6 @@
     "lint": "eslint src/**/*.ts",
     "lint:fix": "npm run lint -- --fix"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "./src/**/*.ts": [
       "nprm run lint:fix",
