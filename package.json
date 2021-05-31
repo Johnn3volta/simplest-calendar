@@ -9,7 +9,7 @@
   },
   "lint-staged": {
     "./src/**/*.ts": [
-      "nprm run lint:fix",
+      "npm run lint:fix",
       "git add"
     ]
   },
