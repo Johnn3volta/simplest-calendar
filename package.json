@@ -9,12 +9,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm run lint:fix"
     }
   },
   "lint-staged": {
-    "./src/**/*.ts": [
-      "nprm run lint:fix",
+    "**/*.ts?(x)": [
+      "npm run lint:fix",
       "git add"
     ]
   },
