@@ -1,1 +1,5 @@
-console.log('Hellow world'); // FIXME: Delete before push
+function f()
+
+{
+  console.log('Hello wpld') // FIXME: Delete before push
+}
