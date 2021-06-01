@@ -7,7 +7,7 @@ import html from '@rollup/plugin-html';
 import scss from 'rollup-plugin-scss';
 
 // FIXME: Разобраться с путями css, js
-const commonPlugins = [resolve(), scss({ output: 'css/style.css' }), terser()];
+const commonPlugins = path => [resolve(), scss({ output: `${path}/css/style.css` }), terser()];
 
 /**
  * @param attributes
@@ -63,6 +63,7 @@ const createTemplate = async ({ title = 'Rollup Dev Title', files }) => {
 const devPlugins = [
   html({
     input: './src/index.html',
+    publicPath: 'dev',
     template: async () =>
       await createTemplate({
         title: 'Rollup Dev Title',
@@ -93,7 +94,7 @@ const devPlugins = [
 const commonOutput = path => [
   {
     name: 'SimplestCalendar',
-    file: `${path}/js/${pkg.name}.umd.js`,
+    file: `${path}/${pkg.name}.umd.js`,
     format: 'umd',
   },
 ];
@@ -117,9 +118,10 @@ const prodOutput = path => [
 
 /**
  * @param dev
+ * @param path
  * @return {Plugin[]}
  */
-const getPlugins = dev => (dev ? commonPlugins.concat(devPlugins) : commonPlugins);
+const getPlugins = (dev, path) => (dev ? [...commonPlugins(path), ...devPlugins] : commonPlugins(path));
 
 /**
  * @param dev
@@ -148,7 +150,7 @@ export default env => {
   const prodJSOutput = {
     input: 'src/index.ts',
     output: getOutput(dev, folder),
-    plugins: getPlugins(dev),
+    plugins: getPlugins(dev, folder),
   };
 
   return dev ? [devJSOutput, prodJSOutput] : prodJSOutput;
