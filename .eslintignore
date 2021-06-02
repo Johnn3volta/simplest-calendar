@@ -1,2 +1,6 @@
 node_modules
 dist
+tests
+example
+dev
+rollup.config.js

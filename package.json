@@ -2,10 +2,16 @@
   "name": "simplest-calendar",
   "version": "1.0.0",
   "description": "Simple Calendar Pure JS",
-  "main": "index.js",
+  "main": "dist/simplest-calendar.cjs.js",
+  "module": "simplest-calendar.esm.js",
+  "browser": "simplest-calendar.umd.js",
   "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c --w --environment dev",
     "lint": "eslint src/**/*.ts",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "test": "node tests/test.js",
+    "pretest": "npm run build"
   },
   "lint-staged": {
     "./src/**/*.ts": [
@@ -30,6 +36,8 @@
   },
   "homepage": "https://github.com/Johnn3volta/simplest-calendar#readme",
   "devDependencies": {
+    "@rollup/plugin-html": "^0.2.3",
+    "@rollup/plugin-node-resolve": "^13.0.0",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
     "eslint": "^7.27.0",
@@ -41,13 +49,24 @@
     "eslint-plugin-unused-imports": "^1.1.1",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
+    "postcss": "^8.3.0",
+    "postcss-preset-env": "^6.7.0",
     "prettier": "^2.3.0",
-    "typescript": "^4.2.4"
+    "rimraf": "^3.0.2",
+    "rollup": "^2.50.5",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-scss": "^2.6.1",
+    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.3.2"
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not op_mini all"
   ],
-  "dependencies": {}
+  "dependencies": {},
+  "files": [
+    "dist"
+  ]
 }
