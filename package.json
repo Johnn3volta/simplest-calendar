@@ -6,7 +6,6 @@
   "module": "simplest-calendar.esm.js",
   "browser": "simplest-calendar.umd.js",
   "scripts": {
-    "prebuild": "rimraf dist",
     "build": "rollup -c",
     "dev": "rollup -c --w --environment dev",
     "lint": "eslint src/**/*.ts",
@@ -50,6 +49,8 @@
     "eslint-plugin-unused-imports": "^1.1.1",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
+    "postcss": "^8.3.0",
+    "postcss-preset-env": "^6.7.0",
     "prettier": "^2.3.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.50.5",

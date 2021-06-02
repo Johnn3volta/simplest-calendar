@@ -5,9 +5,25 @@ import serve from 'rollup-plugin-serve';
 import livereload from 'rollup-plugin-livereload';
 import html from '@rollup/plugin-html';
 import scss from 'rollup-plugin-scss';
+import postcss from 'postcss';
+import postcssPresetEnv from 'postcss-preset-env';
 
 // FIXME: Разобраться с путями css, js
-const commonPlugins = path => [resolve(), scss({ output: `${path}/css/style.css` }), terser()];
+const commonPlugins = path => [
+  resolve(),
+  scss({
+    output: `${path}/css/style.css`,
+    processor: css =>
+      postcss([
+        postcssPresetEnv({
+          browsers: 'last 2 versions',
+        }),
+      ])
+        .process(css)
+        .then(result => result.css),
+  }),
+  terser(),
+];
 
 /**
  * @param attributes
